@@ -1,0 +1,21 @@
+﻿@using ComponentInteraction.Models
+
+<div>
+    <h3>Child Component</h3>
+    <div>Received value at child: "@ReceivedValueAtChild.Data"</div>
+    <button type="button" @onclick="UpdateValue">Update Value</button>
+</div>
+
+@code {
+    [CascadingParameter]
+    public ExampleClass ReceivedValueAtChild { get; set; } = new();
+
+    [CascadingParameter]
+    public GrandParent? Ancestor { get; set; }
+
+    public void UpdateValue()
+    {
+        ReceivedValueAtChild.Data = "Value changed at child";
+        Ancestor?.NotifyChange();
+    }
+}

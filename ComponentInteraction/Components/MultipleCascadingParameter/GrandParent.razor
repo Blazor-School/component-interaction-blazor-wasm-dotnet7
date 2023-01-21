@@ -1,0 +1,14 @@
+﻿<div>
+    <h3>Grand Parent Component</h3>
+    The grand parent component is passing "@Data1" and "@Data2" to the descendant components.
+    <CascadingValue Value="Data1">
+        <CascadingValue Value="Data2" Name="CascadeParam2">
+            <Parent />
+        </CascadingValue>
+    </CascadingValue>
+</div>
+
+@code {
+    public string Data1 { get; set; } = "First data.";
+    public string Data2 { get; set; } = "Second data.";
+}

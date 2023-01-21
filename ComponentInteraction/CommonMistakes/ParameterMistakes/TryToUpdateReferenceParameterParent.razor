@@ -1,0 +1,15 @@
+﻿@using ComponentInteraction.Models
+
+<div>
+    <h3>Parent</h3>
+    Parent component is passing: "@ExampleInstance.Data" to the child component.
+    <button @onclick="StateHasChanged">Update UI</button>
+    <TryToUpdateReferenceParameterChild ExampleInstance="ExampleInstance" />
+</div>
+
+@code {
+    public ExampleClass ExampleInstance { get; set; } = new()
+        {
+            Data = "Fresh data"
+        };
+}

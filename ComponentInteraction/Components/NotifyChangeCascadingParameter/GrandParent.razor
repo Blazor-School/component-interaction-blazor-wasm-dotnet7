@@ -1,0 +1,23 @@
+﻿@using ComponentInteraction.Models
+
+<div>
+    <h3>Grand Parent Component</h3>
+    The grand parent component is passing "@ExampleInstance.Data" to the descendant components.
+    <CascadingValue Value="this">
+        <CascadingValue Value="ExampleInstance">
+            <Parent />
+        </CascadingValue>
+    </CascadingValue>
+</div>
+
+@code {
+    public ExampleClass ExampleInstance { get; set; } = new()
+    {
+        Data = "Fresh data"
+    };
+
+    public void NotifyChange()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+}

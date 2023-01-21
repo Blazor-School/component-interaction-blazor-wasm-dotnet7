@@ -1,0 +1,10 @@
+﻿<div>
+    <h3>Parent Component</h3>
+    <div>Received value at parent: "@ReceivedValueAtParent"</div>
+    <Child />
+</div>
+
+@code{
+    [CascadingParameter]
+    public string ReceivedValueAtParent { get; set; } = "";
+}

@@ -1,0 +1,9 @@
+﻿<div>
+    <h3>Child Component</h3>
+    <div>Received value: "@ReceivedValue"</div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public string ReceivedValue { get; set; } = "";
+}
