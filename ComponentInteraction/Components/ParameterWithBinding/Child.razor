@@ -1,0 +1,18 @@
+﻿<div>
+    <h3>Child Component</h3>
+    <div>Received input parameter: "@Input"</div>
+    <button type="button" @onclick="UpdateInputFromChild">Update Value</button>
+</div>
+
+@code {
+    [Parameter]
+    public string? Input { get; set; }
+
+    [Parameter]
+    public EventCallback<string> InputChanged { get; set; }
+
+    public void UpdateInputFromChild()
+    {
+        InputChanged.InvokeAsync("Value changed at child");
+    }
+}

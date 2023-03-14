@@ -1,0 +1,9 @@
+﻿<div>
+    <h3>Parent</h3>
+    <div>Value at parent component: "@PassingInput"</div>
+    <ComponentInteraction.Components.ParameterWithBinding.Child @bind-Input="PassingInput" />
+</div>
+
+@code {
+    public string PassingInput { get; set; } = "Data from parent";
+}
